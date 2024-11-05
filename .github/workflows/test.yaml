@@ -2,7 +2,7 @@ name: test
 on: [push, workflow_dispatch]
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -23,12 +23,13 @@ jobs:
         shell: bash
         run: pip install -r test/requirements.txt
 
-      - name: Set up JDK 11
+      - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: 'sbt'
+          distribution: temurin
+          java-version: 17
+          cache: sbt
+      - uses: sbt/setup-sbt@v1
       - name: generate Verilog
         run: sbt run
 
