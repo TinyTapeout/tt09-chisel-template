@@ -10,6 +10,12 @@ See below to get started or for more information, check the [website](https://ti
 
 ## How to run
 
+First generate the Chisel Verilog output by running in the project root:
+
+```sh
+sbt run
+```
+
 To run the RTL simulation:
 
 ```sh
