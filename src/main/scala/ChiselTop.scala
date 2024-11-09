@@ -11,7 +11,6 @@ class ChiselTop() extends Module {
     val uio_in = Input(UInt(8.W))     // IOs: Input path
     val uio_out = Output(UInt(8.W))   // IOs: Output path
     val uio_oe = Output(UInt(8.W))    // IOs: Enable path (active high: 0=input, 1=output)
-    val ena = Input(Bool())           // will go high when the design is enabled
   })
 
   io.uio_out := 0.U
